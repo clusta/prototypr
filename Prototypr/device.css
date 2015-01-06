@@ -1,0 +1,22 @@
+﻿figure {
+    position: relative;
+    background-image: url(device-sprite.png);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    width: 395px;
+    height: 813px;
+}
+
+figure.android {
+    background-position: -790px 0;
+}
+
+iframe {
+    position: absolute;
+    top: 117px;
+    left: 37px;
+    width: 321px;
+    height: 569px;
+    overflow: hidden;
+    border: 0;
+}
