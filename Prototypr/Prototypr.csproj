@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android_details.html" />
     <Content Include="android.less" />
     <Content Include="android.css.map">
       <DependentUpon>android.css</DependentUpon>
@@ -76,8 +77,12 @@
     <Content Include="android.min.css">
       <DependentUpon>android.css</DependentUpon>
     </Content>
+    <Content Include="device-sprite.png" />
     <Content Include="device.css" />
     <Content Include="index.html" />
+    <Content Include="jquery.min.js" />
+    <Content Include="placeholder.jpg" />
+    <Content Include="prototypr.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
