@@ -65,6 +65,8 @@
     <Content Include="android.css.map">
       <DependentUpon>android.css</DependentUpon>
     </Content>
+    <Content Include="ionicons.ttf" />
+    <Content Include="roboto.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

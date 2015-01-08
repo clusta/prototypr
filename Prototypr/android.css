@@ -1,4 +1,13 @@
-﻿/* variables */
+﻿/* font faces */
+@font-face {
+  font-family: 'Roboto';
+  src: url('roboto.ttf');
+}
+@font-face {
+  font-family: 'Ionicons';
+  src: url('ionicons.ttf');
+}
+/* variables */
 /* mixins */
 .row {
   display: flex;
