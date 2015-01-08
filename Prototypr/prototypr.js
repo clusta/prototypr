@@ -3,48 +3,67 @@
         cache: false
     });
 
-    function bindSlides() {
+    function setInactiveSections() {
         $("main > section + section").addClass("next");
     }
 
-    var selector = "main > *";
-    var current = $(selector);
+    function getActiveSection() {
+        return $("main > section").not(".next").not(".prev");
+    }
+
+    function getSectionByIndex(index) {
+        return $("main > section").eq(index);
+    }
+
+    function getIndexByTagName(el) {
+        var tagName = el.prop("tagName");
+
+        return el.parent().children(tagName).index(el);
+    }
+
+    function swapContent(html, tagName) {
+        var next = html.find(tagName);
+
+        if (next.length > 0) {
+            $("body > " + tagName).html(next);
+        }
+    }
+
+    var getContent = "main > *";
 
     $("body").on("click", "a[href]", function (e) {
         e.preventDefault();
 
         var anchor = $(this);
         var href = anchor.attr("href");
-
-        current = $(selector);
+        var current = $(getContent);
 
         $.get(href, function (data) {
             var html = $("<div></div>").html(data);
-            var content = html.find(selector);
+            var content = html.find(getContent);
             
+            function onTransitionEnd() {
+                current.remove();
+
+                setInactiveSections();
+
+                swapContent(html, "header");
+                swapContent(html, "footer")
+
+                setInactiveSections();
+            }
+
             if (content.filter("section").length == 1) {
                 var next = content.first("section");
 
                 next.addClass("next");
 
-                current.after(content);
+                current.last().after(content);
 
                 next.one("transitionend webkitTransitionEnd", function () {
                     current.remove();
 
-                    var header = html.find("header");
-
-                    if (header.length > 0) {
-                        $("body > header").html(header);
-                    }
-
-                    var footer = html.find("footer");
-
-                    if (footer.length > 0) {
-                        $("body > footer").html(footer);
-                    }
-
-                    bindSlides();
+                    onTransitionEnd();
                 });
 
                 setTimeout(function () {
@@ -53,31 +72,32 @@
             }
             else {
                 current.after(content);
-                current.remove();
+
+                onTransitionEnd();
             }
         });
     });
 
     $("body").on("click", "main > nav > a", function () {
         var anchor = $(this);
-        var index = anchor.parent().children("a").index(anchor);
+        var index = getIndexByTagName(anchor);
+        var active = getActiveSection();
 
-        current = $(selector).not(".next").not(".prev");
-        next = $(selector).eq(index);
+        next = getSectionByIndex(index);
 
-        var currentIndex = current.parent().children("section").index(current);
+        var currentIndex = getIndexByTagName(active);
 
         next
             .removeClass("prev")
             .removeClass("next");
 
         if (currentIndex > index) {
-            current.addClass("next");
+            active.addClass("next");
         }
         else {
-            current.addClass("prev");
+            active.addClass("prev");
         }
     });
 
-    bindSlides();
+    setInactiveSections();
 });
