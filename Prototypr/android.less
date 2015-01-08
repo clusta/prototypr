@@ -31,6 +31,17 @@
     bottom: 0;
 }
 
+.icon {
+    &:before {
+        font-family: Ionicons;
+        visibility: visible;
+    }
+}
+
+.active {
+    font-weight: bold;
+}
+
 /* typography */
 
 html {
@@ -149,7 +160,7 @@ section {
 
 /* drawer */
 
-nav {
+body > nav {
     position: absolute;
     top: 0;
     left: 0;
@@ -162,6 +173,7 @@ nav {
 }
 
 input[name=hamburger] {
+    .icon;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -170,7 +182,6 @@ input[name=hamburger] {
 }
 
 input[name=hamburger]:before {
-    font-family: Ionicons;
     content: "\f394";
     font-size: 28px;
     visibility: visible;
@@ -215,11 +226,22 @@ footer {
 /* nav */
 
 nav {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    a {
+        display: block;
     }
+}
+
+/* footer */
+
+footer {
+    .row;
+}
+
+/* menu */
+
+menu {
+    .row;
+    padding: 0;
 }
 
 /* header */
@@ -249,9 +271,12 @@ article {
 
 /* icons */
 
+button {
+    .icon;
+}
+
 button:before {
-    font-family: Ionicons;
-    padding-right: 4px;
+    padding-right: @padding;
 }
 
 button[name=like]:before {
@@ -260,4 +285,61 @@ button[name=like]:before {
 
 button[name=comment]:before {
     content: "\f11b";
+}
+
+/* skip links */
+
+main {
+    > nav {
+        .row;
+        position: absolute;
+        bottom: @gutter;
+        width: 100%;
+
+        a {
+            .icon;
+            visibility: hidden;
+
+            &:before {
+                content: "\f21b";
+            }
+        }
+    }
+}
+
+/* form */
+
+.button {
+    display: block;
+    width: 100%;
+    background-color: #2196f3;
+    color: white;
+    text-transform: uppercase;
+    padding: @padding;
+    margin: @gutter 0;
+
+    b {
+        display: block;
+        background-color: #f44336;
+        margin: -@padding -@padding;
+        padding: @padding;
+        font-weight: normal;
+    }
+}
+
+form {
+    label {
+        display: block;
+        margin: @gutter 0;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        margin: @padding 0;
+    }
+
+    > button {
+        .button;
+    } 
 }

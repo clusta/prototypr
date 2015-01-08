@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android_form.html" />
+    <Content Include="android_welcome.html" />
     <Content Include="android_details.html" />
     <Content Include="android.less" />
     <Content Include="android.css.map">
