@@ -183,16 +183,6 @@ button {
   border: 0;
   background-color: transparent;
 }
-/* tabs */
-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-footer > * {
-  flex: 1;
-  text-align: center;
-}
 /* nav */
 nav a {
   display: block;
@@ -339,7 +329,7 @@ form > button b {
   padding: 8px;
   font-weight: normal;
 }
-/* list */
+/* unstyled list */
 ul {
   padding: 0;
   list-style: none;
