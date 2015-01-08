@@ -19,7 +19,17 @@
   right: 0;
   bottom: 0;
 }
+.touch {
+  cursor: pointer;
+}
+.icon {
+  cursor: pointer;
+}
 .icon:before {
+  font-family: Ionicons;
+  visibility: visible;
+}
+.icon:after {
   font-family: Ionicons;
   visibility: visible;
 }
@@ -34,16 +44,15 @@ html {
 * {
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
 }
 /* links */
 a,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 /* cursor */
 a,
-input,
 button {
   cursor: pointer;
 }
@@ -70,6 +79,7 @@ nav {
   padding: 20px;
 }
 header {
+  padding: 20px;
   height: 50px;
 }
 main {
@@ -129,6 +139,7 @@ body > nav {
   z-index: 1;
 }
 input[name=hamburger] {
+  cursor: pointer;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -136,6 +147,10 @@ input[name=hamburger] {
   visibility: hidden;
 }
 input[name=hamburger]:before {
+  font-family: Ionicons;
+  visibility: visible;
+}
+input[name=hamburger]:after {
   font-family: Ionicons;
   visibility: visible;
 }
@@ -216,6 +231,10 @@ header > * {
 header h1 {
   flex-grow: 2;
 }
+header h1 ~ a,
+header h1 ~ button {
+  text-align: right;
+}
 /* card */
 article {
   padding: 8px;
@@ -229,7 +248,14 @@ article p {
   margin: 8px 0;
 }
 /* icons */
+button {
+  cursor: pointer;
+}
 button:before {
+  font-family: Ionicons;
+  visibility: visible;
+}
+button:after {
   font-family: Ionicons;
   visibility: visible;
 }
@@ -256,9 +282,14 @@ main > nav > * {
   text-align: center;
 }
 main > nav a {
+  cursor: pointer;
   visibility: hidden;
 }
 main > nav a:before {
+  font-family: Ionicons;
+  visibility: visible;
+}
+main > nav a:after {
   font-family: Ionicons;
   visibility: visible;
 }
@@ -290,6 +321,7 @@ form input {
   display: block;
   width: 100%;
   margin: 8px 0;
+  text-align: left;
 }
 form > button {
   display: block;
@@ -306,5 +338,13 @@ form > button b {
   margin: -8px -8px;
   padding: 8px;
   font-weight: normal;
+}
+/* list */
+ul {
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  padding: 8px 0;
 }
 /*# sourceMappingURL=android.css.map */
