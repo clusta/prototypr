@@ -57,16 +57,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="android_search.html" />
-    <Content Include="android_form.html" />
-    <Content Include="android_welcome.html" />
-    <Content Include="android_details.html" />
-    <Content Include="android.less" />
-    <Content Include="android.css.map">
-      <DependentUpon>android.css</DependentUpon>
+    <Content Include="search.html" />
+    <Content Include="signup.html" />
+    <Content Include="welcome.html" />
+    <Content Include="details.html" />
+    <Content Include="theme\native.less" />
+    <Content Include="theme\native.css.map">
+      <DependentUpon>native.css</DependentUpon>
     </Content>
-    <Content Include="ionicons.ttf" />
-    <Content Include="roboto.ttf" />
+    <Content Include="lib\ionicons.ttf" />
+    <Content Include="lib\roboto.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,19 +75,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="android.css">
-      <DependentUpon>android.less</DependentUpon>
+    <Content Include="theme\native.css">
+      <DependentUpon>native.less</DependentUpon>
     </Content>
-    <Content Include="android.html" />
-    <Content Include="android.min.css">
-      <DependentUpon>android.css</DependentUpon>
+    <Content Include="activity.html" />
+    <Content Include="theme\native.min.css">
+      <DependentUpon>native.css</DependentUpon>
     </Content>
-    <Content Include="device-sprite.png" />
-    <Content Include="device.css" />
+    <Content Include="theme\devices.png" />
+    <Content Include="theme\devices.css" />
     <Content Include="index.html" />
-    <Content Include="jquery.min.js" />
-    <Content Include="placeholder.jpg" />
-    <Content Include="prototypr.js" />
+    <Content Include="lib\jquery.min.js" />
+    <Content Include="placeholder\16-9.jpg" />
+    <Content Include="theme\transitions.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
